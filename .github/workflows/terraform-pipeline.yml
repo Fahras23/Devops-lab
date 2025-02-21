@@ -1,0 +1,74 @@
+name: Terraform Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Terrafrom Action'
+        required: true
+        type: choice
+        options:
+          - apply
+          - destroy
+  pull_request:
+  push:
+    branches:
+      - "master"
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
+  ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+  ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
+  
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: ['AKS_Cluster']
+    steps:
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          client-id: "${{ secrets.AZURE_CLIENT_ID }}"
+          tenant-id: "${{ secrets.AZURE_TENANT_ID }}"
+          subscription-id: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform Init
+        id: init
+        run: terraform init
+        working-directory: ${{ matrix.directory }}/
+
+      - name: Terraform Fmt
+        id: fmt
+        run: terraform fmt -check
+
+      - name: Terraform Plan
+        id: plan
+        if: github.event_name == 'pull_request'
+        run: terraform plan
+        continue-on-error: true
+        working-directory: ${{ matrix.directory }}/
+
+      - name: Terrform Apply
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' &&  inputs.action  == 'apply')
+        run: terraform apply -auto-approve
+        working-directory: ${{ matrix.directory }}/
+
+      - name: Terrform Destroy
+        if: github.event_name == 'workflow_dispatch' &&  inputs.action  == 'destroy'
+        run: terraform destroy -auto-approve
+        working-directory: ${{ matrix.directory }}/
