@@ -3,5 +3,4 @@ kind: ConfigMap
 metadata:
   name: chatapp-config
 data:
-  - DJANGO_ALLOWED_HOSTS: "*"
-  - DB_NAME: "PSQL"
+  DJANGO_ALLOWED_HOSTS: "*"
