@@ -11,9 +11,13 @@ on:
           - apply
           - destroy
   pull_request:
+    paths:
+    - Azura_Infra/**
   push:
     branches:
       - "master"
+    paths:
+      - Azura_Infra/**
 
 permissions:
   id-token: write
@@ -30,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        directory: ['AKS_Cluster']
+        directory: ['Azure_Infra']
     steps:
       
       - name: Checkout code
