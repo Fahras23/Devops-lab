@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatapp
+  labels:
+    app: chat
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat
+  template:
+    metadata:
+      labels:
+        app: chat
+    spec:
+      containers:
+        - image: kyczak/chatapp:latest
+          name: chat-container
+          envFrom:
+          - configMapRef:
+              name: chatapp-config
+          ports: 
+          - containerPort: 8000
+            name: gunicorn
+          resources:
+            requests: 
+              cpu: "100m"
