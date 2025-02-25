@@ -15,7 +15,7 @@ spec:
         app: chat
     spec:
       containers:
-        - name: chatapp-container 
+        - name: chatapp
         - image: kyczak/chatapp:latest
           envFrom:
           - configMapRef:
