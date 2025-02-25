@@ -15,7 +15,7 @@ spec:
     targetRevision: HEAD
     path: Apps/chatapp
     directory:
-      include: '*.yaml'
+      recurse: true 
   destination:
     server: https://kubernetes.default.svc
     namespace: chatapp
