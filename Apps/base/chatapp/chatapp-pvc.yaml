@@ -8,6 +8,6 @@ spec:
   storageClassName: managed
   resources:
     requests:
-      storage: 50 Mi
+      storage: 50Mi
     accessModels:
     - ReadWriteOnce
