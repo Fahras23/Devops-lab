@@ -1,12 +1,12 @@
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  name: chatapp-pvc
-  labels:
-    app.kubernetes.io/name: chatapp-pvc
-spec:
-  resources:
-    requests:
-      storage: 50Mi
-  accessModes:
-  - ReadWriteOnce
+# kind: PersistentVolumeClaim
+# apiVersion: v1
+# metadata:
+#   name: chatapp-pvc
+#   labels:
+#     app.kubernetes.io/name: chatapp-pvc
+# spec:
+#   resources:
+#     requests:
+#       storage: 50Mi
+#   accessModes:
+#   - ReadWriteOnce
