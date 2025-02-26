@@ -1,5 +1,5 @@
 kind: PersistentVolumeClaim
-apiVersion: apps/v1
+apiVersion: V1
 metadata:
   name: chatapp-pvc
   labels:
