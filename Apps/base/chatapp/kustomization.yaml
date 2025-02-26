@@ -6,5 +6,6 @@ resources:
   - chatapp-deployment.yaml
   - chatapp-hpa.yaml
   - chatapp-svc.yaml
+  - chatapp-pvc
   - redis-deployment.yaml
   - redis-svc.yaml
