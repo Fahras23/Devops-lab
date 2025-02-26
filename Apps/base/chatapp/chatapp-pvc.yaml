@@ -3,7 +3,7 @@ apiVersion: apps/v1
 metadata:
   name: chatapp-pvc
   labels:
-    app.kubernetes.io/name chatapp-pvc
+    app.kubernetes.io/name: chatapp-pvc
 spec:
   storageClassName: managed
   resources:
