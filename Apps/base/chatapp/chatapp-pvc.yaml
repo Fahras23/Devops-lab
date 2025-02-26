@@ -5,7 +5,6 @@ metadata:
   labels:
     app.kubernetes.io/name: chatapp-pvc
 spec:
-  storageClassName: managed
   resources:
     requests:
       storage: 50Mi
