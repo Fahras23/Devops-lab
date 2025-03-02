@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: https://github.com/Fahras23/Devops-lab.git
     targetRevision: HEAD
-    path: Apps/base/chatapp
+    path: Apps/chatapp/base
   destination:
     server: https://kubernetes.default.svc
     namespace: chatapp
