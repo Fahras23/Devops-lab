@@ -9,6 +9,8 @@ spec:
       containers:
         - name: chatapp
           image: kyczak/chatapp:beta
+          command: ["python", "manage.py", "makemigrations"]
+          command: ["python", "manage.py", "migrate"]
           env:
           - name: DB_NAME
             valueFrom:
