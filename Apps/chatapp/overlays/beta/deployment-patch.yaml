@@ -37,8 +37,8 @@ spec:
                 name: beta-pg-cluster-app
                 key: port
       initContainers:
-        - name: myapp-migrations
-          image: myapp:latest
+        - name: chatapp-migrations
+          image: chatapp:beta
           command: ["/bin/sh"]
           args:
             - "-c"
