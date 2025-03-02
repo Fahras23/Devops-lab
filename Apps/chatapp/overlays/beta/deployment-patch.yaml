@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
         - name: chatapp
-          image: kyczak/chatapp:latest
+          image: kyczak/chatapp:beta
