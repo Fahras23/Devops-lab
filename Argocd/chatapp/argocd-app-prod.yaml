@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: chatapp
+  name: chatapp-prod
   namespace: argocd
   annotations:
     argocd-image-updater.argoproj.io/image-list: chatapp-image=kyczak/chatapp
@@ -14,10 +14,10 @@ spec:
   source:
     repoURL: https://github.com/Fahras23/Devops-lab.git
     targetRevision: HEAD
-    path: Apps/chatapp/base
+    path: Apps/chatapp/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: chatapp
+    namespace: prod
   syncPolicy:
     automated:
       prune: true
