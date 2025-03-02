@@ -9,29 +9,29 @@ spec:
       containers:
         - name: chatapp
           image: kyczak/chatapp:beta
-      env:
-      - name: DB_NAME
-        valueFrom:
-          secretKeyRef:
-            name: beta-pg-cluster-app
-            key: dbname
-      - name: DB_USER
-        valueFrom:
-          secretKeyRef:
-            name: beta-pg-cluster-app
-            key: username
-      - name: DB_PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: beta-pg-cluster-app
-            key: password
-      - name: DB_HOST
-        valueFrom:
-          secretKeyRef:
-            name: beta-pg-cluster-app
-            key: host
-      - name: DB_PORT
-        valueFrom:
-          secretKeyRef:
-            name: beta-pg-cluster-app
-            key: port
+          env:
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: beta-pg-cluster-app
+                key: dbname
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: beta-pg-cluster-app
+                key: username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: beta-pg-cluster-app
+                key: password
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: beta-pg-cluster-app
+                key: host
+          - name: DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: beta-pg-cluster-app
+                key: port
