@@ -1,3 +1,3 @@
 kustomize:
   images:
-  - kyczak/chatapp:latest
+  - kyczak/chatapp:beta
