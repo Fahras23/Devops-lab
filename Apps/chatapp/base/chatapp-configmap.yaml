@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: chatapp-config
 data:
-  DJANGO_ALLOWED_HOSTS: "*"
+  ENV: "production"
