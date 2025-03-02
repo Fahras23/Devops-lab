@@ -38,7 +38,7 @@ spec:
                 key: port
       initContainers:
         - name: chatapp-migrations
-          image: chatapp:beta
+          image: kyczak/chatapp:beta
           command: ["/bin/sh"]
           args:
             - "-c"
