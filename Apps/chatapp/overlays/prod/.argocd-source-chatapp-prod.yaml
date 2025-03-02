@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - kyczak/chatapp:beta
