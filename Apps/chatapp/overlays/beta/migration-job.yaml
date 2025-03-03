@@ -1,13 +1,13 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: chatapp
+  name: db-migration
+  namespace: beta
 spec:
-  replicas: 1
   template:
     spec:
       containers:
-        - name: chatapp
+        - name: db-migration
           image: kyczak/chatapp:beta
           command: ["python", "manage.py", "migrate"]
           env:
@@ -36,3 +36,4 @@ spec:
               secretKeyRef:
                 name: beta-pg-cluster-app
                 key: port
+      restartPolicy: OnFailure
