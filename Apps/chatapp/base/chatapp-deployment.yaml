@@ -17,6 +17,7 @@ spec:
       containers:
         - name: chatapp
           image: kyczak/chatapp:latest
+          revisionHistoryLimit: 0
           envFrom:
           - configMapRef:
               name: chatapp-config
