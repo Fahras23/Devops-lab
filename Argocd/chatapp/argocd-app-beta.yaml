@@ -4,7 +4,7 @@ metadata:
   name: chatapp-beta
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: kyczak/chatapp:beta
+    argocd-image-updater.argoproj.io/image-list: chatapp-image=kyczak/chatapp:beta
     argocd-image-updater.argoproj.io/chatapp-image.force-update: "true"
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
     argocd-image-updater.argoproj.io/git-branch: master
