@@ -8,4 +8,5 @@ helmCharts:
   valuesFile: https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/main/docs/src/samples/monitoring/kube-stack-config.yaml
 
 resources:
-- pvc.yaml
+- grafana-configmap.yaml
+- namespace.yaml
