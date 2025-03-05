@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+helmCharts:
+- name:  prometheus-community
+  repo:  prometheus-community/kube-prometheus-stack
+  namespace: monitoring
+  valuesFile: https://raw.githubusercontent.com/cloudnative-pg/cloudnative-pg/main/docs/src/samples/monitoring/kube-stack-config.yaml
+
+resources:
+- pvc.yaml
