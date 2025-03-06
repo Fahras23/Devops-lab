@@ -9,4 +9,3 @@ resources:
   - chatapp-pvc.yaml
   - redis-deployment.yaml
   - redis-svc.yaml
-  - grafana-configmap.yaml
