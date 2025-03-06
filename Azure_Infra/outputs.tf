@@ -10,7 +10,7 @@ output "kube_config" {
 }
 
 output "nodes_number" {
-  value = azurerm_kubernetes_cluster.chatapp_cluster.nodes_number
+  value = azurerm_kubernetes_cluster.chatapp_cluster.id
   
   sensitive =  false
 }
