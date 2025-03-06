@@ -12,7 +12,7 @@ on:
           - destroy
   pull_request:
     paths:
-      - Azura_Infra/**
+      - Azure_Infra/**
   push:
     branches:
       - "master"

@@ -8,3 +8,9 @@ output "kube_config" {
 
   sensitive = true
 }
+
+output "nodes_number" {
+  value = azurerm_kubernetes_cluster.chatapp_cluster.nodes_number
+  
+  sensitive =  false
+}
