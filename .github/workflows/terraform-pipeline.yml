@@ -17,7 +17,7 @@ on:
     branches:
       - "master"
     paths:
-      - Azura_Infra/**
+      - Azure_Infra/**
 
 permissions:
   id-token: write
