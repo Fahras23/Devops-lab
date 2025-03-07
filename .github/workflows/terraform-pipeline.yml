@@ -34,7 +34,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        directory: ['Azure_Infra']
+        directory:
+          - Azure_Infra/**
     steps:
       
       - name: Checkout code
