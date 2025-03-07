@@ -35,7 +35,8 @@ jobs:
     strategy:
       matrix:
         directory:
-          - Azure_Infra/**
+          - Azure_Infra/aks_cluster
+          - Azure_Infra/monitoring
     steps:
       
       - name: Checkout code
