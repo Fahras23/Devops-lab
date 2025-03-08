@@ -7,7 +7,7 @@ resource "azurerm_storage_account" "monitoring" {
 }
 
 resource "azurerm_storage_container" "kube_logs" {
-  name                  = "kube_logs"
-  storage_account_id    = azurerm_storage_account.monitoring.id
+  name                  = "kube-logs"
+  storage_account_name    = azurerm_storage_account.monitoring.name
   container_access_type = "private"
 }
