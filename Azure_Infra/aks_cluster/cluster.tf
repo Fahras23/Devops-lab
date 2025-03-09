@@ -9,7 +9,8 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     vm_size    = "Standard_DA2_v2"
     auto_scaling_enabled = true
     min_count           = 1   
-    max_count           = 1   
+    max_count           = 1
+    temporary_name_for_rotation = "updatenode"   
   }
 
   identity {
