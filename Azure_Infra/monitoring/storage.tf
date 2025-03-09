@@ -7,13 +7,7 @@ resource "azurerm_storage_account" "monitoring" {
 }
 
 resource "azurerm_storage_container" "kube_logs" {
-  name                  = "kube-logs"
+  name                  = "loki"
   storage_account_name    = azurerm_storage_account.monitoring.name
-  container_access_type = "private"
-}
-
-resource "azurerm_storage_container" "kube_logs_ruler" {
-  name                  = "kube-logs-ruler"
-  storage_account_name    = azurerm_storage_account.monitoring.name
-  container_access_type = "private"
+  container_access_type = "container"
 }
