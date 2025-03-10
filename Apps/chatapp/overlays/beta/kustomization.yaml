@@ -8,8 +8,7 @@ resources:
   - namespace.yaml
   - pg-cluster.yaml
   - migration-job.yaml
-  - alloy-deployment.yaml
-  - alloy-configmap.yaml
+
 patches:
   - path: deployment-patch.yaml
 
