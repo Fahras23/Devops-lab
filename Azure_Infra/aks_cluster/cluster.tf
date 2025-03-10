@@ -10,7 +10,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     auto_scaling_enabled = true
     min_count           = 1   
     max_count           = 1
-    temporary_name_for_rotation = "maintenanceinstance"   
+    temporary_name_for_rotation = "maintenance"   
   }
 
   identity {
