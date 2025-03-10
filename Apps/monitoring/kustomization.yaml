@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - grafana-configmap.yaml
-  - namespace.yamls
+  - namespace.yaml
