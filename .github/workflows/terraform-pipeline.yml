@@ -10,6 +10,7 @@ on:
         options:
           - apply
           - destroy
+          - plan
   pull_request:
     paths:
       - Azure_Infra/**
@@ -59,7 +60,7 @@ jobs:
 
       - name: Terraform Plan
         id: plan
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' &&  inputs.action  == 'plan')
         run: terraform plan
         continue-on-error: true
         working-directory: ${{ matrix.directory }}/
