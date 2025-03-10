@@ -3,6 +3,4 @@ kind: Kustomization
 
 resources:
   - grafana-configmap.yaml
-  - namespace.yaml
-  - alloy-deployment.yaml
-  - alloy-configmap.yaml
+  - namespace.yamls
