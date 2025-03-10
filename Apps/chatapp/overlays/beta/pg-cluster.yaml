@@ -10,6 +10,6 @@ spec:
   monitoring:
     enablePodMonitor: true
   # for maintenance window
-  # nodeMaintenanceWindow:
-  #   inProgress: true
-  #   reusePVC: true
+  nodeMaintenanceWindow:
+    inProgress: true
+    reusePVC: true
