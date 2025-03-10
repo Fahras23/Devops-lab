@@ -6,7 +6,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
 
   default_node_pool {
     name       = "chatapp"
-    vm_size    = "Standard_A2_v2"
+    vm_size    = "Default"
     auto_scaling_enabled = true
     min_count           = 1   
     max_count           = 1
