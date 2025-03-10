@@ -9,6 +9,7 @@ spec:
     size: 1Gi
   monitoring:
     enablePodMonitor: true
-  nodeMaintenanceWindow:
-    inProgress: true
-    reusePVC: true
+  # for maintenance window
+  # nodeMaintenanceWindow:
+  #   inProgress: true
+  #   reusePVC: true
