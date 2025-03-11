@@ -20,6 +20,6 @@ spec:
         storageAccount:
           name: azure-creds
           key: AZURE_STORAGE_ACCOUNT
-        storageSasToken:
+        storageKey:
           name: azure-creds
-          key: AZURE_STORAGE_SAS_TOKEN
+          key: AZURE_STORAGE_KEY
