@@ -9,7 +9,7 @@ resources:
   - pg-cluster.yaml
   - migration-job.yaml
   - pg-backup-schedule.yaml
-  - pg-backup
+  
 patches:
   - path: deployment-patch.yaml
 
