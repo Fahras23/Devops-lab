@@ -23,3 +23,5 @@ spec:
         storageKey:
           name: azure-creds
           key: AZURE_STORAGE_KEY
+      wal:
+        compression: gzip
