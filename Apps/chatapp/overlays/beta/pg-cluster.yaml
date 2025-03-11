@@ -15,7 +15,7 @@ spec:
     reusePVC: true
   backup:
     barmanObjectStore:
-      destinationPath: "https://kubernetesstorages.blob.core.windows.net/cnpg-backups"
+      destinationPath: "https://kubernetesstorages.blob.core.windows.net/cnpg-backups/backups"
       azureCredentials:
         storageAccount:
           name: azure-creds
