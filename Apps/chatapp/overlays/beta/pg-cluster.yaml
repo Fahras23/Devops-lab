@@ -11,5 +11,21 @@ spec:
     enablePodMonitor: true
   # for maintenance window
   nodeMaintenanceWindow:
-    inProgress: true
+    inProgress: false
     reusePVC: true
+  backup:
+    barmanObjectStore:
+      destinationPath: "https://kubernetesstorages.blob.core.windows.net/cnpg-backups"
+      azureCredentials:
+        connectionString:
+          name: azure-creds
+          key: AZURE_CONNECTION_STRING
+        storageAccount:
+          name: azure-creds
+          key: AZURE_STORAGE_ACCOUNT
+        storageKey:
+          name: azure-creds
+          key: AZURE_STORAGE_KEY
+        storageSasToken:
+          name: azure-creds
+          key: AZURE_STORAGE_SAS_TOKEN
