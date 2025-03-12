@@ -1,0 +1,18 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: cluster-example-initdb
+spec:
+  instances: 3
+
+  superuserSecret:
+    name: beta-pg-cluster-app
+    key:  password
+
+  bootstrap:
+    recovery:
+      backup:
+        name: backup-example
+
+  storage:
+    size: 1Gi
