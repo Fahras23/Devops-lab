@@ -3,6 +3,6 @@ kind: ScheduledBackup
 metadata:
   name: pg-backup-schedule
 spec:
-  schedule: "* * */24 * * *" 
+  schedule: "* */24 * * *" 
   cluster:
     name: beta-pg-cluster
