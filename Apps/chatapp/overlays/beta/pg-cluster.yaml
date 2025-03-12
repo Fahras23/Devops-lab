@@ -5,6 +5,10 @@ metadata:
 spec:
   instances: 2
   primaryUpdateStrategy: unsupervised
+  bootstrap:
+    recovery:
+      backup:
+        name: beta-pg-backup-schedule-20250312001700
   storage:
     size: 1Gi
   monitoring:
