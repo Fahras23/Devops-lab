@@ -8,7 +8,7 @@ spec:
   bootstrap:
     recovery:
       backup:
-        name: beta-pg-backup-schedule-20250312001700
+        name: beta-pg-backup-schedule-20250312104855
   storage:
     size: 1Gi
   monitoring:
