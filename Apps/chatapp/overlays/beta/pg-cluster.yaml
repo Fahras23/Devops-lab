@@ -11,7 +11,7 @@ spec:
     enablePodMonitor: true
   # for maintenance window
   nodeMaintenanceWindow:
-    inProgress: false
+    inProgress: true
     reusePVC: true
   backup:
     barmanObjectStore:
