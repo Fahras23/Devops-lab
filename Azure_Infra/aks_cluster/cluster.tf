@@ -18,6 +18,6 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   }
 
   tags = {
-    Environment = "Production"
+    Environment = "Testing"
   }
 }
