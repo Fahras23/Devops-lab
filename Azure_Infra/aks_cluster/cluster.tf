@@ -15,14 +15,6 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     vnet_subnet_id = azurerm_subnet.subnet1.id
   }
 
- network_profile {
-    network_plugin = "azure"
-    network_plugin_mode = "overlay"
-    outbound_type = "loadBalancer"
-    service_cidr = "10.0.2.0/24"
-    dns_service_ip = "10.0.2.3"
-  }
-
   identity {
     type = "SystemAssigned"
   }
