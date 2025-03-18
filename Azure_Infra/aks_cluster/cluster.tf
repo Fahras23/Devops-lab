@@ -18,6 +18,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
  network_profile {
     network_plugin = "azure"
     network_plugin_mode = "overlay"
+    outbound_type = "loadBalancer"
     service_cidr = "10.0.2.0/24"
     dns_service_ip = "10.0.2.3"
   }
