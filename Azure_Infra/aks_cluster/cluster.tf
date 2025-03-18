@@ -13,7 +13,6 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     node_count          = 1
     temporary_name_for_rotation = "maintenance"   
     vnet_subnet_id = azurerm_subnet.subnet1.id
-    pod_subnet_id = azurerm_subnet.subnet2.id
   }
   
   identity {
