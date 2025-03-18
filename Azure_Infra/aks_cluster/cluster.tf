@@ -15,8 +15,9 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     vnet_subnet_id = azurerm_subnet.subnet1.id
   }
 
-  ingress_application_gateway {
-    subnet_id = azurerm_subnet.subnet2.id
+ network_profile {
+    network_plugin = "azure"
+    pod_cidr = "10.0.0.2/24"
   }
 
   identity {
