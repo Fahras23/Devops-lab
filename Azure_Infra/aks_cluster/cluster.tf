@@ -14,7 +14,11 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     temporary_name_for_rotation = "maintenance"   
     vnet_subnet_id = azurerm_subnet.subnet1.id
   }
-  
+
+  ingress_application_gateway {
+    subnet_id = azurerm_subnet.subnet2.id
+  }
+
   identity {
     type = "SystemAssigned"
   }
@@ -23,3 +27,4 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     Environment = "Testing"
   }
 }
+v
