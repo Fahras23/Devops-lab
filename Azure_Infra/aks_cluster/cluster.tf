@@ -27,4 +27,3 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     Environment = "Testing"
   }
 }
-v
