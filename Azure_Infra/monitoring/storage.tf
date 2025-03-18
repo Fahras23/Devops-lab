@@ -1,5 +1,5 @@
 resource "azurerm_storage_account" "monitoring" {
-  name                     = "kubernetesstoragecontainers"
+  name                     = "kubernetesstorage25"
   resource_group_name      = "Infrastructure"
   location                 = "West US 2"
   account_tier             = "Standard"
