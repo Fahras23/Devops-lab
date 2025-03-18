@@ -1,6 +1,6 @@
 resource "azurerm_storage_account" "monitoring" {
   name                     = "kubernetesstorages"
-  resource_group_name      = "MC_Infrastructure_chatapp-uw2_westus2"
+  resource_group_name      = "Infrastructure"
   location                 = "West US 2"
   account_tier             = "Standard"
   account_replication_type = "LRS"
