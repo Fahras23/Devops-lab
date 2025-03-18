@@ -17,6 +17,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
 
  network_profile {
     network_plugin = "azure"
+    network_plugin_mode = "overlay"
     pod_cidr = "10.0.0.2/24"
   }
 
