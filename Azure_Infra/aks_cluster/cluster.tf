@@ -19,6 +19,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     network_plugin = "azure"
     network_plugin_mode = "overlay"
     service_cidr = "10.0.2.0/24"
+    dns_service_ip = "10.0.2.3"
   }
 
   identity {
