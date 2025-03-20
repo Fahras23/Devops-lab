@@ -8,8 +8,8 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     name       = "chatapp"
     vm_size    = "Standard_D2s_v4"
     auto_scaling_enabled = true
-    min_count           = 2 
-    node_count          = 1
+    max_count           = 2 
+    node_count          = 2
     temporary_name_for_rotation = "maintenance"
   }
 
