@@ -12,27 +12,6 @@ resource "azurerm_policy_definition" "aks_policy" {
 METADATA
 
 
-  policy_rule = <<POLICY_RULE
- {
-   "if": {
-      "allOf": [
-        {
-          "field": "type",
-          "equals": "Microsoft.ContainerService/managedClusters/agentPools"
-        },
-        {
-          "not": {
-            "field": "Microsoft.ContainerService/managedClusters/agentPools/vmSize",
-            "equals": "Standard_D2s_v4"
-          }
-        }
-      ]
-    },
-    "then": {
-      "effect": "deny"
-    }
-POLICY_RULE
-
-
+  policy_rule = templatefile("${path.module}/policy_rule.tpl", {})
 
 }
