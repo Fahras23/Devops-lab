@@ -5,5 +5,5 @@ resource "azurerm_portal_dashboard" "my-board" {
   tags = {
     source = "terraform"
   }
-  dashboard_properties = templatefile("${path.module}/dash.tpl", {})
+  dashboard_properties = templatefile("${path.module}/templates/dash.tpl", {})
 }
