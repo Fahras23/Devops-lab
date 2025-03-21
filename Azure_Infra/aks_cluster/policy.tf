@@ -12,6 +12,6 @@ resource "azurerm_policy_definition" "aks_policy" {
 METADATA
 
 
-  policy_rule = templatefile("${path.module}/policy_rule.tpl", {})
+  policy_rule = templatefile("${path.module}/templates/policy_rule.tpl", {})
 
 }
