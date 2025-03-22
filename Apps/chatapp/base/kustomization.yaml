@@ -9,3 +9,12 @@ resources:
   - chatapp-pvc.yaml
   - redis-deployment.yaml
   - redis-svc.yaml
+
+  helmCharts:
+  - name: elasticsearch
+    version: 7.17.3
+    repo: https://helm.elastic.co
+    releaseName: elasticsearch
+    namespace: elasticsearch
+    valuesInline:
+      replicas: 1
