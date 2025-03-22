@@ -10,11 +10,11 @@ resources:
   - redis-deployment.yaml
   - redis-svc.yaml
 
-  helmCharts:
-  - name: elasticsearch
-    version: 7.17.3
-    repo: https://helm.elastic.co
-    releaseName: elasticsearch
-    namespace: monitoring
-    valuesInline:
-      replicas: 1
+helmCharts:
+- name: elasticsearch
+  version: 7.17.3
+  repo: https://helm.elastic.co
+  releaseName: elasticsearch
+  namespace: monitoring
+  valuesInline:
+    replicas: 1
