@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - grafana-configmap.yaml
   - namespace.yaml
+  - service_account.yaml
 
 helmCharts:
 - name: elasticsearch
