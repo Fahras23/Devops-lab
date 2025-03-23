@@ -20,4 +20,4 @@ helmCharts:
   repo: https://fluent.github.io/helm-charts
   releaseName: fluent-bit
   namespace: monitoring
-  valuesFile: fluentbit_values.yaml
+  valuesFile: fluentbit-values.yaml
