@@ -5,7 +5,8 @@ resources:
   - grafana-configmap.yaml
   - namespace.yaml
   - service_account.yaml
-
+  - service_provider_class.yaml
+  
 helmCharts:
 - name: elasticsearch
   version: 7.17.3
