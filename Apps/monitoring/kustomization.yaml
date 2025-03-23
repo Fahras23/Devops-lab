@@ -16,7 +16,6 @@ helmCharts:
   valuesInline:
     replicas: 1
 - name: fluent-bit
-  version: 0.24.0
   repo: https://fluent.github.io/helm-charts
   releaseName: fluent-bit
   namespace: monitoring
