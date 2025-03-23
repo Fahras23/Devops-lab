@@ -6,7 +6,7 @@ resources:
   - namespace.yaml
   - service_account.yaml
   - service_provider_class.yaml
-  
+
 helmCharts:
 - name: elasticsearch
   version: 7.17.3
@@ -15,3 +15,10 @@ helmCharts:
   namespace: monitoring
   valuesInline:
     replicas: 1
+- name: fluent-bit
+  version: 0.24.0
+  repo: https://fluent.github.io/helm-charts
+  releaseName: fluent-bit
+  namespace: monitoring
+  valuesFiles:
+    - values.yaml

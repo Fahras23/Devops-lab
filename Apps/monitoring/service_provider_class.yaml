@@ -7,21 +7,13 @@ spec:
   provider: azure
   parameters:
     usePodIdentity: "true"
-    keyvaultName:
-      valueFrom:
-        secretKeyRef:
-          name: keyvault-name-secret
-          key: keyvaultname
+    keyvaultName: "sops-2594f517b553436a"
     objects: |
       array:
         - |
           objectName: shared-key
           objectType: secret
-    tenantId:
-     valueFrom:
-        secretKeyRef:
-          name: tenant-id-secret
-          key: tenantId
+    tenantId: "94315061-16dd-4481-8c7c-902059c4dd0e" 
   secretObjects:
   - secretName: azure-secret
     data:
