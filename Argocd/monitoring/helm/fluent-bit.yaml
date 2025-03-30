@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: fluent-bit
+spec:
+  project: default
+  source:
+    chart: fluent-bit
+    repoURL: https://fluent.github.io/helm-charts  # note: the oci:// syntax is not included.
+    targetRevision: 0.48.9
+  destination:
+    name: "in-cluster"
+    namespace: monitoring
