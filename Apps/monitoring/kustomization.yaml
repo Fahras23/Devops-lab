@@ -7,5 +7,3 @@ resources:
   - service_account.yaml
   - fluent-bit.yaml
   - elasticsearch.yaml
-  - helm_values/fluentbit-values.yaml
-  - helm_values/elasticsearch_values.yaml

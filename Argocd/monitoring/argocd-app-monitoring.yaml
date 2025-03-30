@@ -5,13 +5,10 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  sources:
-    - repoURL: https://github.com/Fahras23/Devops-lab.git
-      targetRevision: HEAD
-      path: Apps/monitoring
-    - repoURL: https://github.com/Fahras23/Devops-lab.git
-      targetRevision: HEAD
-      path: Apps/monitoring/helm_values.yaml
+  source:
+    repoURL: https://github.com/Fahras23/Devops-lab.git
+    targetRevision: HEAD
+    path: Apps/monitoring
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
