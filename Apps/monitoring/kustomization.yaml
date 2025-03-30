@@ -5,11 +5,4 @@ resources:
   - grafana-configmap.yaml
   - namespace.yaml
   - service_account.yaml
-helmCharts:
-  - name: elasticsearch
-    version: 7.17.3
-    repo: https://helm.elastic.co
-    releaseName: elasticsearch
-    namespace: monitoring
-    valuesInline:
-      replicas: 1
+  - fluent-bit.yaml

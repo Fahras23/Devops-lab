@@ -8,5 +8,6 @@ resources:
   - namespace.yaml
 patches:
   - path: deployment-patch.yaml
+  
 
 namePrefix: prod-
