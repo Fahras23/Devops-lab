@@ -5,14 +5,14 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: fluent-bit
-    repoURL: https://fluent.github.io/helm-charts
-    targetRevision: 0.48.9
-    helm:
-      releaseName: fluent-bit
-      valueFiles:
-        - ./helm_values/fluentbit-values.yaml
+  sources:
+    - chart: fluent-bit
+      repoURL: https://fluent.github.io/helm-charts
+      targetRevision: 0.48.9
+      helm:
+        releaseName: fluent-bit
+        valueFiles:
+          - Apps/monitoring/helm_values/fluentbit-values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
