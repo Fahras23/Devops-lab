@@ -12,7 +12,7 @@ spec:
       helm:
         releaseName: fluent-bit
         valueFiles:
-          - Apps/monitoring/helm_values/fluentbit-values.yaml
+          - fluentbit-values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
