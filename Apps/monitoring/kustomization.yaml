@@ -6,3 +6,4 @@ resources:
   - namespace.yaml
   - service_account.yaml
   - fluent-bit.yaml
+  - elasticsearch.yaml
