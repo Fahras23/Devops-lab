@@ -10,9 +10,10 @@ spec:
       repoURL: https://fluent.github.io/helm-charts
       targetRevision: 0.48.9
       helm:
-        releaseName: fluent-bit
         valueFiles:
-          - fluentbit-values.yaml
+        - $values/Helm_Values/fluentbit-values.yaml
+    - repoURL: 'https://github.com/Fahras23/Devops-lab.git'
+      ref: values
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring

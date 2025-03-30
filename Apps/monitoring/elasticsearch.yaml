@@ -5,14 +5,15 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: elasticsearch
-    repoURL: https://helm.elastic.co
-    targetRevision: 7.17.3
-    helm:
-      releaseName: elasticsearch
-      valueFiles:
-        - ../helm_values/elasticsearch_values.yaml
+  sources:
+    - chart: elasticsearch
+      repoURL: https://helm.elastic.co
+      targetRevision: 7.17.3
+      helm:
+        valueFiles:
+        - $values/Helm_Values/elasticsearch_values.yaml
+    - repoURL: 'https://github.com/Fahras23/Devops-lab.git'
+      ref: values
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
