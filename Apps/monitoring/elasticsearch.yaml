@@ -12,7 +12,7 @@ spec:
     helm:
       releaseName: elasticsearch
       valueFiles:
-        - /helm_values/elasticsearch_values.yaml
+        - ../helm_values/elasticsearch_values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: monitoring
