@@ -8,4 +8,4 @@ resources:
   - fluent-bit.yaml
   - elasticsearch.yaml
   - grafana.yaml
-  - prometheous.yaml
+  - prometheus.yaml
