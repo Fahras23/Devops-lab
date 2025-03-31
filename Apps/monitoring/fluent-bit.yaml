@@ -11,8 +11,8 @@ spec:
       targetRevision: 0.48.9
       helm:
         valueFiles:
-        - $values/Helm_Values/fluentbit-values.yaml
-    - repoURL: 'https://github.com/Fahras23/Devops-lab.git'
+        - $values/fluentbit_values.yaml
+    - repoURL: 'https://github.com/Fahras23/helm_values.git'
       ref: values
   destination:
     server: "https://kubernetes.default.svc"

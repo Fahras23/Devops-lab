@@ -11,8 +11,8 @@ spec:
       targetRevision: 7.17.3
       helm:
         valueFiles:
-        - $values/Helm_Values/elasticsearch_values.yaml
-    - repoURL: 'https://github.com/Fahras23/Devops-lab.git'
+        - $values/elasticsearch_values.yaml
+    - repoURL: 'https://github.com/Fahras23/helm_values.git'
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
