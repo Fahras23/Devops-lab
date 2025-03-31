@@ -1,4 +1,4 @@
-resource "grafana_organization" "my_org2" {
+resource "grafana_organization" "my_org_2" {
   name = "my_org_2"
 }
 
