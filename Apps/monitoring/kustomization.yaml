@@ -7,3 +7,4 @@ resources:
   - service_account.yaml
   - fluent-bit.yaml
   - elasticsearch.yaml
+  - grafana.yaml
