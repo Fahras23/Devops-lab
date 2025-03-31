@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - chart: grafana
+      repoURL: https://grafana.github.io/helm-charts
+      targetRevision: 8.5.1
+      helm:
+        valueFiles:
+        - $values/grafana_values.yaml
+    - repoURL: 'https://github.com/Fahras23/helm_values.git'
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: monitoring
