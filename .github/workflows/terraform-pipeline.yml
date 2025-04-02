@@ -14,11 +14,13 @@ on:
   pull_request:
     paths:
       - Azure_Infra/**
+      - Grafana/**
   push:
     branches:
       - "master"
     paths:
       - Azure_Infra/**
+      - Grafana/**
 
 permissions:
   id-token: write
@@ -40,6 +42,7 @@ jobs:
         directory:
           - Azure_Infra/aks_cluster
           - Azure_Infra/monitoring
+          - Grafana
     steps:
       
       - name: Checkout code
