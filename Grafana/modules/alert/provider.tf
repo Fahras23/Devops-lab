@@ -1,1 +1,13 @@
-provider.tf
+terraform {
+  required_providers {
+    grafana = {
+      source = "grafana/grafana"
+      version = ">= 3.20.0"
+    }
+  }
+}
+provider "grafana" {
+  alias = "module"
+  url  = var.grafana_url
+  auth = var.grafana_auth
+}
