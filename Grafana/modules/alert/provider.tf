@@ -1,8 +1,1 @@
-provider "azurerm" {
-  features {}
-}
-
-provider "grafana" {
-  url  = var.grafana_url
-  auth = var.grafana_auth
-}
+provider.tf
