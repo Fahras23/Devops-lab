@@ -1,4 +1,5 @@
 provider "grafana" {
+  alias = "module"
   url  = var.grafana_url
   auth = var.grafana_auth
 }

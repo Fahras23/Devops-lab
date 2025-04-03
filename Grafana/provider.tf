@@ -10,3 +10,19 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+provider "grafana" {
+  alias = "usage"
+  url  = var.grafana_url
+  auth = var.grafana_auth
+}
+
+variable "grafana_url" {
+  type      = string
+  sensitive = true
+}
+
+variable "grafana_auth" {
+  type      = string
+  sensitive = true
+}
