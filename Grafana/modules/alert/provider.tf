@@ -16,5 +16,5 @@ provider "azurerm" {
 }
 
 provider "grafana" {
-  alias = "usage"
+  alias = "module"
 }
