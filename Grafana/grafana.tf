@@ -1,5 +1,5 @@
 resource "grafana_organization" "my_org_2" {
-  name = "my_org_2"
+  name = "my_org_3"
 }
 
 // Create resources (optional: within the organization)
