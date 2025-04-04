@@ -17,6 +17,6 @@ provider "azurerm" {
 
 provider "grafana" {
   alias = "root"
-  url  = var.grafana_url
-  auth = var.grafana_auth
+  url  = var.grafana_url_module
+  auth = var.grafana_auth_module
 }
