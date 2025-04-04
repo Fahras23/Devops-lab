@@ -1,7 +1,7 @@
 module "example" {
     source = "./modules/alert"
     providers = {
-        grafana = provider.root
+        grafana = grafana.root
     }
 
     folder_name = "example"
