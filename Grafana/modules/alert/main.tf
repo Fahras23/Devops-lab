@@ -1,12 +1,8 @@
 resource "grafana_folder" "rule_folder" {
-  provider = provider.module
-
   title = var.folder_name
 }
 
 resource "grafana_rule_group" "my_alert_rule" {
-  provider = grafana.module
-
   name             = "My Rule Group"
   folder_uid       = grafana_folder.rule_folder.uid
   interval_seconds = 240
