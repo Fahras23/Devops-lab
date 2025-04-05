@@ -4,8 +4,8 @@ module "example" {
       grafana = grafana.root
     }
 
-    enable_alert = false
-    
+    enable_alert = true
+
     folder_name = "example"
     alert_name = "example"
 
