@@ -45,7 +45,7 @@ resource "grafana_rule_group" "my_alert_rule" {
         from = 0
         to   = 0
       }
-      datasource_uid = "-100"
+      datasource_uid = "behtturun0phcf"
       model = jsonencode({
         hide          = false
         intervalMs    = 1000
