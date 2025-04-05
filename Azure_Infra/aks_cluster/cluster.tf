@@ -3,7 +3,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   location            = "West US 2"
   resource_group_name = "Infrastructure"
   dns_prefix          = "chat"
-  oidc_issuer_enabled = false
+  oidc_issuer_enabled = true
   default_node_pool {
     name       = "chatapp"
     vm_size    = "Standard_D2s_v4"
