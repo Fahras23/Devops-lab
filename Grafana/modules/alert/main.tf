@@ -61,7 +61,7 @@ resource "grafana_rule_group" "my_alert_rule" {
         },
         "query": {
             "params": [
-            "sum(rate(node_cpu_seconds_total[5m]))"
+            "sum(rate(node_cpu_seconds_total{node="aks-chatapp-33350159-vmss000000"}[5m]))"
             ]
         },
         "reducer": {
