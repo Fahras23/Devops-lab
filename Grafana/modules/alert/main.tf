@@ -4,7 +4,7 @@ resource "grafana_folder" "rule_folder" {
 
 resource "grafana_rule_group" "my_alert_rule" {
   count =  var.enable_alert ? 1 : 0
-  name             = "My Rule Group"
+  name             = "Infrastructure"
   folder_uid       = grafana_folder.rule_folder.uid
   interval_seconds = 240
   org_id           = 1
@@ -14,13 +14,8 @@ resource "grafana_rule_group" "my_alert_rule" {
     condition      = "B"
     no_data_state  = "NoData"
     exec_err_state = "Alerting"
-    annotations = {
-      "a" = "b"
-      "c" = "d"
-    }
     labels = {
-      "e" = "f"
-      "g" = "h"
+      "name" = "node_cpu"
     }
     is_paused = false
     data {
