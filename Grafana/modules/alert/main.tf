@@ -47,4 +47,6 @@ resource "grafana_rule_group" "my_alert_rule" {
       }
       datasource_uid = "-100"
       model          = templatefile("${path.module}/templates/alert_data.tpl", {})
+    }
+  }
 }
