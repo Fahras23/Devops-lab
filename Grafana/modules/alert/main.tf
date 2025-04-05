@@ -14,8 +14,13 @@ resource "grafana_rule_group" "my_alert_rule" {
     condition      = "B"
     no_data_state  = "NoData"
     exec_err_state = "Alerting"
+    annotations = {
+      "a" = "b"
+      "c" = "d"
+    }
     labels = {
-      "name" = "node_cpu"
+      "e" = "f"
+      "g" = "h"
     }
     is_paused = false
     data {
@@ -40,34 +45,8 @@ resource "grafana_rule_group" "my_alert_rule" {
         from = 0
         to   = 0
       }
-      datasource_uid = "behtturun0phcf"
-      model = jsonencode({
-        hide          = false
-        intervalMs    = 1000
-        maxDataPoints = 43200
-        refId         = "B"
-        conditions = [
-          {
-            evaluator = {
-              params = [3],
-              type   = "gt"
-            },
-            operator = {
-              type = "and"
-            },
-            query = {
-              params = [
-                "sum(rate(node_cpu_seconds_total{node=\"aks-chatapp-33350159-vmss000000\"}[5m]))"
-              ]
-            },
-            reducer = {
-              params = [],
-              type   = "last"
-            },
-            type = "query"
-          }
-        ],
-      })
+      datasource_uid = "-100"
+      model          = templatefile("${path.module}/templates/alert_data.tpl", {})
     }
   }
 }
