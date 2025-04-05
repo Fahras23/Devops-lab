@@ -60,7 +60,7 @@ resource "grafana_rule_group" "my_alert_rule" {
         },
         "query": {
             "params": [
-            "sum(node_memory_MemTotal_bytes)"
+            "sum(rate(node_cpu_seconds_total[5m]))"
             ]
         },
         "reducer": {
