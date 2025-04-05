@@ -1,4 +1,5 @@
-"conditions": [
+{
+    "conditions": [
         {
         "evaluator": {
             "params": [
