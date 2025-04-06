@@ -12,7 +12,7 @@
         },
         "query": {
             "params": [
-            "sum(rate(node_cpu_seconds_total{node=\"aks-chatapp-33350159-vmss000000\"}[5m]))"
+            "sum(count(kube_namespace_created) by (namespace))"
             ]
         },
         "reducer": {
