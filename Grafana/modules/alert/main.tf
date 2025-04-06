@@ -3,12 +3,16 @@ resource "grafana_folder" "rule_folder" {
 }
 
 resource "grafana_contact_point" "email_alert" {
-  name = "email-alerts"
+  name = "critical-email"
 
   email {
-    addresses = ["2001krzysztoflyczak@@gmail.com"]
-    message   = "Alert: {{ .CommonLabels.alertname }} - {{ .CommonAnnotations.summary }}"
-    subject   = "Grafana Alert: {{ .CommonLabels.alertname }}"
+    addresses = ["2001krzysztoflyczak@gmail.com"]
+    message   = <<-EOT
+      Alert: {{ .CommonLabels.alertname }}
+      Value: {{ .Values.B.Value }}
+      Instance: {{ .CommonLabels.instance }}
+    EOT
+    subject   = "ALERT: {{ .CommonLabels.alertname }}"
   }
 }
 
@@ -66,8 +70,7 @@ resource "grafana_rule_group" "my_alert_rule" {
 
     notification_settings {
       contact_point = grafana_contact_point.email_alert.name
-      group_by      = null
-      mute_timings  = null
+      group_by      = "alertname"
     }
   }
 }
