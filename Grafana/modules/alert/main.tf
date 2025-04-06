@@ -55,7 +55,7 @@ resource "grafana_rule_group" "my_alert_rule" {
     is_paused      = false
 
     notification_settings {
-      contact_point = "grafana-default-email"
+      contact_point = "2001krzysztoflyczak@gmail.com"
       group_by      = null
       mute_timings  = null
     }
