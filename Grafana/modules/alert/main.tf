@@ -23,21 +23,7 @@ resource "grafana_rule_group" "my_alert_rule" {
       "g" = "h"
     }
     is_paused = false
-    data {
-      ref_id     = "A"
-      query_type = ""
-      relative_time_range {
-        from = 600
-        to   = 0
-      }
-      datasource_uid = "behtturun0phcf"
-      model = jsonencode({
-        hide          = false
-        intervalMs    = 1000
-        maxDataPoints = 43200
-        refId         = "A"
-      })
-    }
+    
     data {
       ref_id     = "B"
       query_type = ""

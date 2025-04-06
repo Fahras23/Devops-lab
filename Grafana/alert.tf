@@ -6,7 +6,7 @@ module "example" {
 
     enable_alert = true
 
-    folder_name = "Namespace count changed"
-    alert_name = "Cluster"
+    folder_name = "Cluster"
+    alert_name = "Namespace count changed"
 
 }
