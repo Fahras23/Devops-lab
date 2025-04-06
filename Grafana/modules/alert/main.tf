@@ -23,15 +23,15 @@ resource "grafana_rule_group" "my_alert_rule" {
       "g" = "h"
     }
     is_paused = false
-    
+
     data {
-      ref_id     = "B"
+      ref_id     = "A"
       query_type = ""
       relative_time_range {
         from = 0
         to   = 0
       }
-      datasource_uid = "-100"
+      datasource_uid = "behtturun0phcf"
       model          = templatefile("${path.module}/templates/alert_data.tpl", {})
     }
   }
