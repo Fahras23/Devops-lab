@@ -3,14 +3,14 @@ resource "grafana_folder" "rule_folder" {
 }
 
 resource "grafana_rule_group" "my_alert_rule" {
-  count =  var.enable_alert ? 1 : 0
+  count            = var.enable_alert ? 1 : 0
   name             = "My Rule Group"
   folder_uid       = grafana_folder.rule_folder.uid
   org_id           = 1
   interval_seconds = 60
 
   rule {
-    name      = "Namespaces"
+    name      = var.alert_name
     condition = "C"
 
     data {
@@ -23,6 +23,28 @@ resource "grafana_rule_group" "my_alert_rule" {
 
       datasource_uid = "behtturun0phcf"
       model          = "{\"editorMode\":\"code\",\"expr\":\"sum(count(kube_namespace_created) by (namespace))\",\"instant\":true,\"intervalMs\":1000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":false,\"refId\":\"A\"}"
+    }
+    data {
+      ref_id = "B"
+
+      relative_time_range {
+        from = 600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"B\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"A\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"reducer\":\"last\",\"refId\":\"B\",\"type\":\"reduce\"}"
+    }
+    data {
+      ref_id = "C"
+
+      relative_time_range {
+        from = 600
+        to   = 0
+      }
+
+      datasource_uid = "__expr__"
+      model          = "{\"conditions\":[{\"evaluator\":{\"params\":[0],\"type\":\"gt\"},\"operator\":{\"type\":\"and\"},\"query\":{\"params\":[\"C\"]},\"reducer\":{\"params\":[],\"type\":\"last\"},\"type\":\"query\"}],\"datasource\":{\"type\":\"__expr__\",\"uid\":\"__expr__\"},\"expression\":\"B\",\"intervalMs\":1000,\"maxDataPoints\":43200,\"refId\":\"C\",\"type\":\"threshold\"}"
     }
 
     no_data_state  = "NoData"
