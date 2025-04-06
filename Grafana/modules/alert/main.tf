@@ -25,11 +25,11 @@ resource "grafana_rule_group" "my_alert_rule" {
     is_paused = false
 
     data {
-      ref_id     = "A"
+      ref_id     = "B"
       query_type = ""
       relative_time_range {
         from = 0
-        to   = 0
+        to   = 1
       }
       datasource_uid = "behtturun0phcf"
       model          = templatefile("${path.module}/templates/alert_data.tpl", {})
