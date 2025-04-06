@@ -22,6 +22,10 @@
         "type": "query"
         }
     ],
+    "datasource": {
+        "type": "prometheous",
+        "uid": "behtturun0phcf"
+    },
     "hide": false,
     "intervalMs": 1000,
     "maxDataPoints": 43200,
