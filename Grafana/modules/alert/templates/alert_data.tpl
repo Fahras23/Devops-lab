@@ -22,10 +22,6 @@
         "type": "query"
         }
     ],
-    "datasource": {
-        "type": "__expr__",
-        "uid": "behtturun0phcf"
-    },
     "hide": false,
     "intervalMs": 1000,
     "maxDataPoints": 43200,
