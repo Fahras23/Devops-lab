@@ -35,7 +35,7 @@ resource "grafana_rule_group" "my_alert_rule" {
         to   = 0
       }
 
-      datasource_uid = "behtturun0phcf"
+      datasource_uid = "deiab3tfasoaoa"
       model          = "{\"editorMode\":\"code\",\"expr\":\"sum(count(kube_namespace_created) by (namespace))\",\"instant\":true,\"intervalMs\":1000,\"legendFormat\":\"__auto\",\"maxDataPoints\":43200,\"range\":false,\"refId\":\"A\"}"
     }
     data {
