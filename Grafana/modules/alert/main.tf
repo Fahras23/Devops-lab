@@ -6,7 +6,7 @@ resource "grafana_contact_point" "email_alert" {
   name = "critical-email"
 
   email {
-    addresses = ["2001krzysztoflyczak@gmail.com"]
+    addresses = ["kalycz223@gmail.com"]
     message   = <<-EOT
       Alert: {{ .CommonLabels.alertname }}
       Value: {{ .Values.B.Value }}
