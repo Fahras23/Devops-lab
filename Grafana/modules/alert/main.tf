@@ -70,7 +70,6 @@ resource "grafana_rule_group" "my_alert_rule" {
 
     notification_settings {
       contact_point = grafana_contact_point.email_alert.name
-      group_by      = "alertname"
     }
   }
 }
