@@ -12,6 +12,14 @@ spec:
     metrics:
       enable: true
       interval: 10s
+    customQueries:
+      - name: pg_users
+        query: |
+          SELECT count(*) FROM auth_user;
+        metrics:
+        - metric: "pg_users"
+          description: "PostgreSQL users information"
+          
   # for maintenance window
   nodeMaintenanceWindow:
     inProgress: false
