@@ -9,9 +9,12 @@ spec:
     size: 1Gi
   monitoring:
     enablePodMonitor: true
+  metrics:
+    enable: true
+    interval: 10s
   # for maintenance window
   nodeMaintenanceWindow:
-    inProgress: true
+    inProgress: false
     reusePVC: true
   backup:
     barmanObjectStore:

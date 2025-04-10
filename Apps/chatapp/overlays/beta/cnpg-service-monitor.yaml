@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: cnpg-monitor
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      cnpg.io/cluster: beta-pg-cluster
+      cnpg.io/instanceRole: primary
+  endpoints:
+  - port: metrics
+    interval: 10s
