@@ -7,8 +7,8 @@ spec:
   primaryUpdateStrategy: unsupervised
   storage:
     size: 1Gi
-  monitoring:
-    enablePodMonitor: true
+  enableServiceMonitor: true
+  enablePodMonitor: true
   metrics:
     enable: true
     interval: 10s
