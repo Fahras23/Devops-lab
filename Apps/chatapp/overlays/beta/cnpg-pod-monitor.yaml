@@ -1,0 +1,10 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: beta-pg-cluster
+spec:
+  selector:
+    matchLabels:
+      postgresql: beta-pg-cluster
+  podMetricsEndpoints:
+  - port: metrics
