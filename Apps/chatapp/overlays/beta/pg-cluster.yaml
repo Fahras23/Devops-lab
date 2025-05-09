@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: pg-cluster
 spec:
-  instances: 2
+  instances: 1
   primaryUpdateStrategy: unsupervised
   storage:
     size: 1Gi
