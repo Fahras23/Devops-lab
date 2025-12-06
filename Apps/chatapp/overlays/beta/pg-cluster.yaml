@@ -20,19 +20,19 @@ spec:
         - metric: "pg_users"
           description: "PostgreSQL users information"
           
-  # for maintenance window
-  nodeMaintenanceWindow:
-    inProgress: false
-    reusePVC: true
-  backup:
-    barmanObjectStore:
-      destinationPath: "https://kubestrg.blob.core.windows.net/cnpg-backups/backups"
-      azureCredentials:
-        storageAccount:
-          name: azure-creds
-          key: AZURE_STORAGE_ACCOUNT
-        storageKey:
-          name: azure-creds
-          key: AZURE_STORAGE_KEY
-      wal:
-        compression: gzip
+  # # for maintenance window
+  # nodeMaintenanceWindow:
+  #   inProgress: false
+  #   reusePVC: true
+  # backup:
+  #   barmanObjectStore:
+  #     destinationPath: "https://kubestrg.blob.core.windows.net/cnpg-backups/backups"
+  #     azureCredentials:
+  #       storageAccount:
+  #         name: azure-creds
+  #         key: AZURE_STORAGE_ACCOUNT
+  #       storageKey:
+  #         name: azure-creds
+  #         key: AZURE_STORAGE_KEY
+  #     wal:
+  #       compression: gzip
