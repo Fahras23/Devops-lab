@@ -4,22 +4,30 @@ metadata:
   name: pg-cluster
 spec:
   instances: 1
-  primaryUpdateStrategy: unsupervised
+
+  imageName: ghcr.io/cloudnative-pg/postgresql:16
+
   storage:
     size: 1Gi
+
+  bootstrap:
+    initdb:
+      database: app
+      owner: app
+      secret:
+        name: beta-pg-cluster-app
+
+  superuserSecret:
+    name: beta-pg-cluster-app
+
   monitoring:
     enablePodMonitor: true
-    metrics:
-      enable: true
-      interval: 10s
-    customQueries:
-      - name: pg_users
-        query: |
-          SELECT count(*) FROM auth_user;
-        metrics:
-        - metric: "pg_users"
-          description: "PostgreSQL users information"
-          
+
+  postgresql:
+    parameters:
+      max_connections: "100"
+      shared_buffers: "256MB"
+
   # # for maintenance window
   # nodeMaintenanceWindow:
   #   inProgress: false
