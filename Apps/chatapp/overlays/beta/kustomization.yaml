@@ -6,9 +6,9 @@ namespace: beta
 resources:
   - ../../base
   - namespace.yaml
-  # - pg-cluster.yaml
-  # - migration-job.yaml
-  # - pg-backup-schedule.yaml
+  - pg-cluster.yaml
+  - migration-job.yaml
+  - pg-backup-schedule.yaml
 
 patches:
   - path: deployment-patch.yaml
