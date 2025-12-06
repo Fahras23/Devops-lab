@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: pg-cluster
 spec:
-  instances: 3
+  instances: 1
 
   imageName: ghcr.io/cloudnative-pg/postgresql:16
 
