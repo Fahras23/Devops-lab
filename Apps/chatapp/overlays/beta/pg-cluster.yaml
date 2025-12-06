@@ -10,16 +10,6 @@ spec:
   storage:
     size: 1Gi
 
-  bootstrap:
-    initdb:
-      database: app
-      owner: app
-      secret:
-        name: beta-pg-cluster-app
-
-  superuserSecret:
-    name: beta-pg-cluster-app
-
   monitoring:
     enablePodMonitor: true
 
