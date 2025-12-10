@@ -35,3 +35,8 @@ spec:
               secretKeyRef:
                 name: beta-pg-cluster-app
                 key: port
+          - name: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: beta-django-secret-key
+                key: secret
