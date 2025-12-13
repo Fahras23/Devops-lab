@@ -1,6 +1,6 @@
 # DevOps Lab
 
-Personal hands-on lab showcasing a complete DevOps workflow on Azure AKS. This repository contains infrastructure code, Kubernetes manifests, GitOps configurations, and monitoring setups for learning and experimentation. Created mainly for purpuse of hosting a personal chat application.
+Personal hands-on lab showcasing a complete DevOps workflow on Azure AKS. This repository contains infrastructure code, Kubernetes manifests, GitOps configurations, and monitoring setups for learning and experimentation. Created mainly for purpuse of hosting a personal [`Apps/chatapp/`](https://github.com/Fahras23/ChatApp): Chat Application.
 
 ## 📋 What You'll Find Here
 
