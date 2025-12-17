@@ -1,7 +1,7 @@
 resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   name                = "chat-uw2"
   location            = "West US 2"
-  resource_group_name = "Infrastructure"
+  resource_group_name = "infra"
   dns_prefix          = "chat"
   oidc_issuer_enabled = false
 
