@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chatapp
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - name: chatapp
+          image: kyczak/chatapp:latest
+          env:
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef:
+                name: prod-pg-cluster-app
+                key: dbname
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: prod-pg-cluster-app
+                key: username
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: prod-pg-cluster-app
+                key: password
+          - name: DB_HOST
+            valueFrom:
+              secretKeyRef:
+                name: prod-pg-cluster-app
+                key: host
+          - name: DB_PORT
+            valueFrom:
+              secretKeyRef:
+                name: prod-pg-cluster-app
+                key: port
+          - name: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: prod-django-secret-key
+                key: secret

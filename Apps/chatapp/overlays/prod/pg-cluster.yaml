@@ -1,0 +1,36 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: pg-cluster
+spec:
+  instances: 1
+
+  imageName: ghcr.io/cloudnative-pg/postgresql:16
+
+  storage:
+    size: 1Gi
+
+  monitoring:
+    enablePodMonitor: true
+
+  postgresql:
+    parameters:
+      max_connections: "100"
+      shared_buffers: "256MB"
+
+  # # for maintenance window
+  # nodeMaintenanceWindow:
+  #   inProgress: false
+  #   reusePVC: true
+  # backup:
+  #   barmanObjectStore:
+  #     destinationPath: "https://kubestrg.blob.core.windows.net/cnpg-backups/backups"
+  #     azureCredentials:
+  #       storageAccount:
+  #         name: azure-creds
+  #         key: AZURE_STORAGE_ACCOUNT
+  #       storageKey:
+  #         name: azure-creds
+  #         key: AZURE_STORAGE_KEY
+  #     wal:
+  #       compression: gzip
