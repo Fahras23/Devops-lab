@@ -4,7 +4,7 @@ metadata:
   name: loki-stack
   namespace: argocd
 spec:
-  project: defaultc
+  project: default
   sources:
     - chart: loki-stack
       repoURL: https://grafana.github.io/helm-charts
