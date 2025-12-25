@@ -5,4 +5,8 @@ resources:
   - grafana-configmap.yaml
   - namespace.yaml
   - service_account.yaml
-  - loki-stack.yaml
+  # - loki-stack.yaml
+  - elasticsearch.yaml      
+  - grafana.yaml
+  - fluent-bit.yaml    
+  - prometheus.yaml
