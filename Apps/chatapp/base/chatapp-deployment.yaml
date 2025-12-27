@@ -18,9 +18,6 @@ spec:
         - name: chatapp
           image: kyczak/chatapp:latest
           revisionHistoryLimit: 0
-          envFrom:
-          - configMapRef:
-              name: chatapp-config
           ports: 
           - containerPort: 8000
             name: gunicorn
