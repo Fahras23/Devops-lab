@@ -9,6 +9,7 @@ resources:
   - pg-cluster.yaml
   - migration-job.yaml
   - pg-backup-schedule.yaml
+  - hpa.yaml
   
 patches:
   - path: deployment-patch.yaml

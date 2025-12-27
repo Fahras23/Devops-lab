@@ -4,7 +4,6 @@ kind: Kustomization
 resources:
   - chatapp-configmap.yaml
   - chatapp-deployment.yaml
-  - chatapp-hpa.yaml
   - chatapp-svc.yaml
   - chatapp-pvc.yaml
   - redis-deployment.yaml

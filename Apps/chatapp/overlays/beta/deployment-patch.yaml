@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: chatapp
 spec:
-  replicas: 1
   template:
     spec:
       imagePullSecrets:
@@ -11,6 +10,13 @@ spec:
       containers:
         - name: chatapp
           image: kyczak/chatapp:beta
+          resources:
+            requests: 
+              cpu: "300m"
+              memory: "500Mi"
+            limits:
+              cpu: "500m"
+              memory: "700Mi"          
           env:
           - name: DB_NAME
             valueFrom:
