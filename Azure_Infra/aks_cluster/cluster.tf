@@ -28,10 +28,10 @@ resource "azurerm_kubernetes_cluster_node_pool" "spot" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.chatapp_cluster.id
   
   #General VM Config
-  vm_size = "Standard_D2s_v3"
+  vm_size = "D2ds_v4"
   os_type = "Linux"
   node_count = 2
-  os_disk_size_gb = "150GB"
+  os_disk_size_gb = 150
   os_disk_type = "Ephemeral"
 
   #Cost Optimization with spot instances
