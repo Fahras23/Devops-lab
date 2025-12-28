@@ -20,7 +20,7 @@ spec:
               memory: "500Mi"
             limits:
               cpu: "500m"
-              memory: "700Mi"v
+              memory: "700Mi"
           env:
           - name: DB_NAME
             valueFrom:

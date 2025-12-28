@@ -10,7 +10,9 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     name       = "default"
     node_count = 1
     vm_size = "Standard_D2s_v4"
+    temporary_name_for_rotation = "maintenance"
   }
+
 
   identity {
     type = "SystemAssigned"
@@ -30,7 +32,6 @@ resource "azurerm_kubernetes_cluster_node_pool" "spot" {
   os_type = "Linux"
   node_count = 2
   os_disk_type = "Ephemeral"
-  temporary_name_for_rotation = "maintenance"
 
   #Cost Optimization with spot instances
   priority = "Spot"
