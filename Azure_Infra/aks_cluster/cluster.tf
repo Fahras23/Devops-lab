@@ -9,7 +9,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   default_node_pool {
     name       = "default"
     node_count = 1
-    vm_size = "Standard_D2s_v3"
+    vm_size = "Standard_D2ds_v4"
     temporary_name_for_rotation = "maintenance"
   }
 
@@ -28,7 +28,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "spot" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.chatapp_cluster.id
   
   #General VM Config
-  vm_size = "D2ds_v4"
+  vm_size = "Standard_D2ds_v4"
   os_type = "Linux"
   node_count = 2
   os_disk_size_gb = 150
