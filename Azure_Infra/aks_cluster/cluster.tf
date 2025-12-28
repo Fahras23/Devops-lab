@@ -28,7 +28,7 @@ resource "azurerm_kubernetes_cluster_node_pool" "spot" {
   kubernetes_cluster_id = azurerm_kubernetes_cluster.chatapp_cluster.id
   
   #General VM Config
-  vm_size = "Standard_D2s_v4"
+  vm_size = "Standard_D2s_v3"
   os_type = "Linux"
   node_count = 2
   os_disk_type = "Ephemeral"

@@ -1,6 +1,6 @@
 resource "azurerm_storage_account" "monitoring" {
-  name                     = "kubernetesstorage25"
-  resource_group_name      = "Infrastructure"
+  name                     = "kubernetesmonitoring"
+  resource_group_name      = "infra"
   location                 = "West US 2"
   account_tier             = "Standard"
   account_replication_type = "LRS"
