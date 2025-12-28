@@ -1,5 +1,0 @@
-replicas: 1
-resources:
-  limits:
-    cpu: "1000m"
-    memory: "500Mi"
