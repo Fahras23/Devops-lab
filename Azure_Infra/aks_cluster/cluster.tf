@@ -8,7 +8,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   #Overwritten by spot node pool
   default_node_pool {
     name       = "default"
-    node_count = 0
+    node_count = 1
     vm_size = "Standard_D2s_v4"
     temporary_name_for_rotation = "maintenance"
   }
