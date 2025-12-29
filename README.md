@@ -18,7 +18,7 @@ Personal hands-on lab showcasing a complete DevOps workflow on Azure AKS. This r
 - `Argocd/`: Application definitions for automated deployments of chatapp (beta/prod) and monitoring
 
 **Helm Configurations**
-- `Helm_Values/`: Custom values for Elasticsearch and Fluent Bit deployments
+- `Helm_Values/`: Custom values moved to different repo
 
 **Testing**
 - `Tests/script.js`: Application health checks and smoke tests
