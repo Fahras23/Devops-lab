@@ -31,8 +31,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "spot" {
   vm_size = "Standard_D2s_v3"
   os_type = "Linux"
   node_count = 2
-  os_disk_size_gb = 150
-  os_disk_type = "Ephemeral"
+
+  #Too small disk space for Ephemeral
+  #os_disk_type = "Ephemeral"
 
   #Cost Optimization with spot instances
   priority = "Spot"
@@ -48,5 +49,4 @@ resource "azurerm_kubernetes_cluster_node_pool" "spot" {
     "nodepool-type" = "spot"
     "workload"      = "infra"
   }
-
 }
