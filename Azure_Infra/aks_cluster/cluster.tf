@@ -11,8 +11,12 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
     node_count = 1
     vm_size = "Standard_D2s_v4"
     temporary_name_for_rotation = "maintenance"
-  }
 
+    node_labels = {
+    "nodepool-type" = "master"
+    "workload"      = "infra"
+    }
+  }
 
   identity {
     type = "SystemAssigned"

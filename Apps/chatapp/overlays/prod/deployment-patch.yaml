@@ -9,7 +9,6 @@ spec:
       imagePullSecrets:
         - name: dockerhub-secret
       nodeSelector:
-        nodepool-type: "spot"
         workload: "infra"
       containers:
         - name: chatapp
