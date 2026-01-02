@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: chatapp
+  name: chatapp-svc
   labels:
     app: chat
 spec:
-  type: LoadBalancer
+  type: Ingress
   selector:
     app: chat
   ports:
-    - port: 8000
+    - port: 80
       targetPort: 8000
