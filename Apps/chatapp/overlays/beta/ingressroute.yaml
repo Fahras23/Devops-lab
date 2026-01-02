@@ -9,5 +9,7 @@ spec:
     - match: Host('localhost')
       kind: Rule
       services:
-        - name: beta-chatapp-svc
+        - kind: Service
+          name: beta-chatapp-svc
+          namespace: beta
           port: 80
