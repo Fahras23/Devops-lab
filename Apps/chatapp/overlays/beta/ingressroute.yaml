@@ -1,0 +1,12 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: chatapp-ingressroute
+spec:
+  entryPoints:
+    - web
+  routes:
+      kind: Rule
+      services:
+        - name: beta-chatapp-svc
+          port: 80

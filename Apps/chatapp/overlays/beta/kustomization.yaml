@@ -10,7 +10,7 @@ resources:
   - migration-job.yaml
   - pg-backup-schedule.yaml
   - hpa.yaml
-  - ingress.yaml
+  - ingressroute.yaml
   
 patches:
   - path: deployment-patch.yaml
