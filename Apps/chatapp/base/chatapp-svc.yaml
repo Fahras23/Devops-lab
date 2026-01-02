@@ -5,7 +5,7 @@ metadata:
   labels:
     app: chat
 spec:
-  type: Ingress
+  type: ClusterIP
   selector:
     app: chat
   ports:
