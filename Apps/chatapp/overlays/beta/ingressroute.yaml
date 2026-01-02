@@ -6,7 +6,7 @@ spec:
   entryPoints:
     - web
   routes:
-      kind: Rule
+    - kind: Rule
       services:
         - name: beta-chatapp-svc
           port: 80
