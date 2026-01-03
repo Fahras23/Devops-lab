@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: chatapp-svc
+  name: chatapp-svc-http
   labels:
     app: chat
 spec:
