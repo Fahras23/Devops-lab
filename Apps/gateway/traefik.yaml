@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - chart: traefik
+      repoURL: https://traefik.github.io/helm-charts
+      targetRevision: 3.6.5
+      helm:
+        valueFiles:
+        - $values/traefik_values.yaml
+    - repoURL: 'https://github.com/Fahras23/helm_values.git'
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: beta

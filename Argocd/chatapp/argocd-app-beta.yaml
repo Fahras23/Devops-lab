@@ -4,7 +4,7 @@ metadata:
   name: chatapp-beta
   namespace: argocd
   annotations:
-    argocd-image-updater.argoproj.io/image-list: chatapp-image=kyczak/chatapp:lastest
+    argocd-image-updater.argoproj.io/image-list: chatapp-image=kyczak/chatapp:beta
     argocd-image-updater.argoproj.io/chatapp-image.update-strategy: digest #update to latest image with declared tag
     argocd-image-updater.argoproj.io/pullsecret: argocd/dockerhub-secret
     argocd-image-updater.argoproj.io/chatapp-image.force-update: "true"
