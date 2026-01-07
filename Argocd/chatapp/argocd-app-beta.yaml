@@ -3,13 +3,6 @@ kind: Application
 metadata:
   name: chatapp-beta
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: chatapp-image=kyczak/chatapp:beta
-    argocd-image-updater.argoproj.io/chatapp-image.update-strategy: digest #update to latest image with declared tag
-    argocd-image-updater.argoproj.io/pullsecret: argocd/dockerhub-secret
-    argocd-image-updater.argoproj.io/chatapp-image.force-update: "true"
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
-    argocd-image-updater.argoproj.io/git-branch: master
 spec:
   project: default
   source:
@@ -23,3 +16,23 @@ spec:
     automated:
       prune: true
       selfHeal: true
+---
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: beta-image-updater
+  namespace: argocd
+spec:
+  namespace: argocd  # Target namespace where Argo CD Applications are located
+  applicationRefs:
+    - namePattern: "chatapp-beta"  # Select applications matching this pattern
+      images:
+        - alias: "chatapp-beta"
+          imageName: "kyczak/chatapp:beta"
+          commonUpdateSettings:
+            updateStrategy: digest
+            forceUpdate: true
+  writeBackConfig:
+    method: git:secret:argocd/git-creds
+    gitConfig:
+      branch: master
