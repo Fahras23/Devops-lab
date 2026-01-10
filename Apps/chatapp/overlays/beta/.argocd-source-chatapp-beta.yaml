@@ -1,3 +1,3 @@
 kustomize:
   images:
-  - kyczak/chatapp:beta@sha256:7a0f272f6709a83b4f33d3029631f859d5d8467bb8c9988c319288da92750ed2
+  - kyczak/chatapp:beta@sha256:28af6e7edcd8642bf480d78bb48810f2fb8bfc3008e38c6db147a3e715acf70e
