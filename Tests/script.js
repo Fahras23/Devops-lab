@@ -1,16 +1,16 @@
 import http from 'k6/http';
-import { sleep } from 'k6';
+import { check } from 'k6';
 
 export const options = {
-  // A number specifying the number of VUs to run concurrently.
-  vus: 10,
-  // loop iterations
-  iterations: 10 ,
-  // A string specifying the total duration of the test run.
-  duration: '10s',
+  stages: [
+    { target: 200, duration: '30s' },
+    { target: 0, duration: '30s' },
+  ],
 };
 
-export default function() {
-  http.get(`http://${__ENV.HOSTNAME}/`);
-  sleep(1);
+export default function () {
+  const result = http.get(`http://${__ENV.HOSTNAME}`);
+  check(result, {
+    'http response status code is 200': result.status === 200,
+  });
 }
