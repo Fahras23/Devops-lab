@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gateway
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Fahras23/Devops-lab.git
+    targetRevision: HEAD
+    path: Apps/gateway
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: treafik
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

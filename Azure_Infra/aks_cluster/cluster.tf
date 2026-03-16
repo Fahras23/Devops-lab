@@ -5,6 +5,10 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   dns_prefix          = "infra"
   oidc_issuer_enabled = false
 
+  azure_active_directory_role_based_access_control {
+    azure_rbac_enabled = true
+  }
+
   #Overwritten by spot node pool
   default_node_pool {
     name       = "default"
