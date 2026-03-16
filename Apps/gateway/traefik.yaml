@@ -12,8 +12,11 @@ spec:
       helm:
         valueFiles:
         - $values/traefik_values.yaml
+        parameters:
+          - name: app 
+          - value: gateway
     - repoURL: 'https://github.com/Fahras23/helm_values.git'
       ref: values
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: beta
+    namespace: traefik
