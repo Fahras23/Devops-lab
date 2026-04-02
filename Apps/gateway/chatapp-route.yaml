@@ -9,6 +9,7 @@ spec:
     sectionName: web
   hostnames:
   - "chatapp.localhost"
+  #- "localIP"
   - "klyczakchatapp.pl"
   rules:
   - matches:
