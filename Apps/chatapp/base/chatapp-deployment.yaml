@@ -28,6 +28,21 @@ spec:
             limits:
               cpu: "200m"
               memory: "150Mi"
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100          # highest priority to worker nodes
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values: [hlw]
+          - weight: 10           # lower priority fallback
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values: [llw]
       # volumes:
       #   - name: chatapp-cache
       #     persistentVolumeClaim:
