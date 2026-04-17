@@ -17,3 +17,18 @@ spec:
         image: redis:latest
         ports:
         - containerPort: 6379
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100          # highest priority to worker nodes
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values: [hlw]
+          - weight: 10           # lower priority fallback
+            preference:
+              matchExpressions:
+              - key: workload
+                operator: In
+                values: [llw]
