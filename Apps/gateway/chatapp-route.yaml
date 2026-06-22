@@ -10,7 +10,8 @@ spec:
   hostnames:
   - "chatapp.localhost"
   #- "localIP"
-  - "klyczakchatapp.pl"
+  - "app.klyczak-chatapp.pl"
+  - "klyczak-chatapp.pl"
   rules:
   - matches:
     - path:
