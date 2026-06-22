@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: llama
+  name: llmkube
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Fahras23/Devops-lab.git
     targetRevision: HEAD
-    path: Apps/llama
+    path: Apps/llmkube
   destination:
     server: https://kubernetes.default.svc
     namespace: llmkube-system
