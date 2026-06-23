@@ -2,7 +2,7 @@ apiVersion: inference.llmkube.dev/v1alpha1
 kind: InferenceService
 metadata:
   name: gemma-e2b-service
-  namespace: llmkube-system
+  namespace: llmkube
 spec:
   runtime: llamacpp
   modelRef: gemma-e2b

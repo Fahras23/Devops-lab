@@ -11,7 +11,7 @@ spec:
     path: Apps/llmkube
   destination:
     server: https://kubernetes.default.svc
-    namespace: llmkube-system
+    namespace: llmkube
   syncPolicy:
     automated:
       prune: true
