@@ -12,5 +12,5 @@ spec:
     path: /v1/chat/completions
     type: NodePort
   resources:
-    cpu: "1"
-    memory: "2Gi"
+    cpu: "2"
+    memory: "3Gi"
