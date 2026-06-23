@@ -3,4 +3,6 @@ kind: Kustomization
 
 resources:
   - namespace.yaml
-  - llamaserver.yaml
+  - inference.yaml
+  - model.yaml
+  - llmkube.yaml
