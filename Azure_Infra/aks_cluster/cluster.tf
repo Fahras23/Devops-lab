@@ -13,7 +13,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   default_node_pool {
     name       = "default"
     node_count = 1
-    vm_size = "Standard_D2s_v4"
+    vm_size = "Standard_NP10s"
     temporary_name_for_rotation = "maintenance"
 
     node_labels = {
@@ -31,30 +31,30 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   }
 }
 
-resource "azurerm_kubernetes_cluster_node_pool" "spot" {
-  name = "spot"
-  kubernetes_cluster_id = azurerm_kubernetes_cluster.chatapp_cluster.id
+# resource "azurerm_kubernetes_cluster_node_pool" "spot" {
+#   name = "spot"
+#   kubernetes_cluster_id = azurerm_kubernetes_cluster.chatapp_cluster.id
   
-  #General VM Config
-  vm_size = "Standard_D2s_v4"
-  os_type = "Linux"
-  node_count = 1
+#   #General VM Config
+#   vm_size = "Standard_D2s_v4"
+#   os_type = "Linux"
+#   node_count = 1
 
-  #Too small disk space for Ephemeral
-  #os_disk_type = "Ephemeral"
+#   #Too small disk space for Ephemeral
+#   #os_disk_type = "Ephemeral"
 
-  #Cost Optimization with spot instances
-  priority = "Spot"
-  eviction_policy = "Delete"
-  spot_max_price = -1
+#   #Cost Optimization with spot instances
+#   priority = "Spot"
+#   eviction_policy = "Delete"
+#   spot_max_price = -1
 
-  #Autoscaling setup
-  auto_scaling_enabled = true
-  min_count = 1
-  max_count = 2
+#   #Autoscaling setup
+#   auto_scaling_enabled = true
+#   min_count = 1
+#   max_count = 2
 
-  node_labels = {
-    "nodepool-type" = "spot"
-    "workload"      = "infra"
-  }
-}
+#   node_labels = {
+#     "nodepool-type" = "spot"
+#     "workload"      = "infra"
+#   }
+# }
