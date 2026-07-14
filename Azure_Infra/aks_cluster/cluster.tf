@@ -13,7 +13,7 @@ resource "azurerm_kubernetes_cluster" "chatapp_cluster" {
   default_node_pool {
     name       = "default"
     node_count = 1
-    vm_size = "Standard_NC4as_T4_v3"
+    vm_size = "Standard_E8bds_v5"
     temporary_name_for_rotation = "maintenance"
 
     node_labels = {
